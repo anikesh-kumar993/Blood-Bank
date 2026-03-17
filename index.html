@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Digital Blood Network - Connecting blood donors, hospitals, and patients. Find blood donors near you, request emergency blood, and save lives.">
+  <title>Digital Blood Network | Save Lives, Donate Blood</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-float hero-float-1">
+      <i class="fas fa-tint blood-drop-icon"></i>
+    </div>
+    <div class="hero-float hero-float-2">
+      <i class="fas fa-plus blood-drop-icon" style="font-size:3rem"></i>
+    </div>
+    <div class="hero-float hero-float-3">
+      <i class="fas fa-heart blood-drop-icon" style="font-size:2.5rem"></i>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 hero-content">
+          <div class="hero-badge fade-in-up">
+            <span class="pulse-dot"></span>
+            <span data-i18n="heroBadge">Live Blood Donation Network</span>
+          </div>
+          <h1 class="fade-in-up delay-1">
+            <span data-i18n="heroH1Pre">Every Drop </span><span><span data-i18n="heroH1Bold">Saves a Life</span></span>
+          </h1>
+          <p class="fade-in-up delay-2" data-i18n="heroP">
+            Connect with blood donors, hospitals, and blood banks in real-time.
+            Our platform ensures that no one has to wait for life-saving blood during emergencies.
+          </p>
+          <div class="d-flex flex-wrap gap-3 fade-in-up delay-3">
+            <a href="./find-blood.html" class="btn btn-primary-custom">
+              <i class="fas fa-search"></i> <span data-i18n="heroBtn1">Find Blood Now</span>
+            </a>
+            <a href="./register.html" class="btn btn-outline-custom">
+              <i class="fas fa-hand-holding-heart"></i> <span data-i18n="heroBtn2">Become a Donor</span>
+            </a>
+          </div>
+          <div class="hero-stats fade-in-up delay-4">
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="statDonors">10K+</span>
+              <span class="hero-stat-label" data-i18n="statDonors">Donors</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="statLives">25K+</span>
+              <span class="hero-stat-label" data-i18n="statLives">Lives Saved</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="statHospitals">500+</span>
+              <span class="hero-stat-label" data-i18n="statHospitals">Hospitals</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" id="statCities">100+</span>
+              <span class="hero-stat-label" data-i18n="statCities">Cities</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block text-center">
+          <div style="position:relative">
+            <div
+              style="width:350px;height:350px;border-radius:50%;background:rgba(255,255,255,0.08);margin:0 auto;display:flex;align-items:center;justify-content:center;">
+              <div
+                style="width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;">
+                <div
+                  style="width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;">
+                  <i class="fas fa-heartbeat" style="font-size:4rem;color:white;animation:heartbeat 1.5s infinite"></i>
+                </div>
+              </div>
+            </div>
+            <!-- Floating blood group badges -->
+            <div style="position:absolute;top:20px;right:30px;animation:float 4s ease-in-out infinite"
+              class="blood-badge">A+</div>
+            <div style="position:absolute;bottom:30px;right:10px;animation:float 5s ease-in-out infinite 1s"
+              class="blood-badge">O-</div>
+            <div style="position:absolute;top:60px;left:20px;animation:float 6s ease-in-out infinite 0.5s"
+              class="blood-badge">B+</div>
+            <div style="position:absolute;bottom:50px;left:40px;animation:float 4.5s ease-in-out infinite 1.5s"
+              class="blood-badge">AB+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding" id="features">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="fas fa-star"></i> Features</span>
+        <h2 class="section-title">Why Choose BloodNet?</h2>
+        <p class="section-subtitle">Our platform provides everything you need for efficient blood donation and
+          management</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-search-location"></i></div>
+            <h5>Find Donors Instantly</h5>
+            <p>Search and filter blood donors by blood group, location, and availability in real-time</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-ambulance"></i></div>
+            <h5>Emergency Requests</h5>
+            <p>Submit emergency blood requests and automatically notify matching donors nearby</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-map-marked-alt"></i></div>
+            <h5>GPS Blood Bank Locator</h5>
+            <p>Find nearby blood banks and hospitals using GPS with interactive map navigation</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-hospital"></i></div>
+            <h5>Hospital Management</h5>
+            <p>Hospitals can manage blood inventory, approve requests, and track patient records</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-bell"></i></div>
+            <h5>Smart Notifications</h5>
+            <p>Receive alerts for emergency requests, donation reminders, and matching opportunities</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-vials"></i></div>
+            <h5>Compatibility Checker</h5>
+            <p>Check blood type compatibility and eligibility for donation with our interactive tools</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card">
+            <span class="stat-number">10,000+</span>
+            <span class="stat-label">Registered Donors</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card">
+            <span class="stat-number">25,000+</span>
+            <span class="stat-label">Lives Saved</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Partner Hospitals</span>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="stat-card">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Cities Covered</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-padding bg-white" id="how-it-works">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="fas fa-cogs"></i> Process</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Simple steps to connect donors with those in need</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h5>Register</h5>
+            <p>Sign up as a donor, patient, or hospital with your details</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h5>Search</h5>
+            <p>Search for matching blood donors or submit a blood request</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h5>Connect</h5>
+            <p>Get matched with compatible donors and receive notifications</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h5>Save Lives</h5>
+            <p>Complete the donation and help save precious lives</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blood Groups Section -->
+  <section class="section-padding" id="blood-groups">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="section-tag"><i class="fas fa-tint"></i> Blood Types</span>
+        <h2 class="section-title">All Blood Groups Covered</h2>
+        <p class="section-subtitle">We support all major blood groups and ensure compatibility matching</p>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=A+'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">A+</div>
+            <small class="text-muted d-block">A Positive</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=A-'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">A-</div>
+            <small class="text-muted d-block">A Negative</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=B+'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">B+</div>
+            <small class="text-muted d-block">B Positive</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=B-'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">B-</div>
+            <small class="text-muted d-block">B Negative</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=AB+'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">AB+</div>
+            <small class="text-muted d-block">AB Positive</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=AB-'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">AB-</div>
+            <small class="text-muted d-block">AB Negative</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=O+'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">O+</div>
+            <small class="text-muted d-block">O Positive</small>
+          </div>
+        </div>
+        <div class="col-auto" style="cursor:pointer" onclick="window.location.href='/find-blood.html?bg=O-'">
+          <div class="text-center p-3">
+            <div class="blood-badge blood-badge-lg mb-2">O-</div>
+            <small class="text-muted d-block">O Negative</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container" style="position:relative">
+      <h2>Ready to Save a Life?</h2>
+      <p>Join our network of donors and hospitals. Every donation counts.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="./register.html" class="btn btn-primary-custom">
+          <i class="fas fa-user-plus"></i> Register Now
+        </a>
+        <a href="./emergency-request.html" class="btn btn-outline-custom">
+          <i class="fas fa-ambulance"></i> Emergency Request
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Main JS -->
+  <script src="./main.js"></script>
+
+  <!-- ===== FLOATING CHATBOT ===== -->
+  <style>
+    /* Floating Button */
+    #chatbotToggle {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 9999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #D32F2F, #B71C1C);
+      border: none;
+      box-shadow: 0 6px 24px rgba(211, 47, 47, 0.45);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: chatBounce 2.4s infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    #chatbotToggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 32px rgba(211, 47, 47, 0.55);
+      animation: none;
+    }
+
+    #chatbotToggle i {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .chat-pulse-ring {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9998;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 2.5px solid rgba(211, 47, 47, 0.5);
+      animation: pulseRing 2.4s infinite;
+    }
+
+    @keyframes chatBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      30% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(-4px);
+      }
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      70% {
+        transform: scale(1.45);
+        opacity: 0;
+      }
+
+      100% {
+        transform: scale(1.45);
+        opacity: 0;
+      }
+    }
+
+    /* Chat Window */
+    #chatbotPanel {
+      position: fixed;
+      bottom: 104px;
+      right: 28px;
+      z-index: 9997;
+      width: 340px;
+      max-width: calc(100vw - 40px);
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.85) translateY(20px);
+      transform-origin: bottom right;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      max-height: 480px;
+    }
+
+    #chatbotPanel.open {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #D32F2F, #B71C1C);
+      color: #fff;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .chat-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      animation: heartbeat 1.5s infinite;
+    }
+
+    .chat-header-info h6 {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .chat-header-info small {
+      opacity: 0.85;
+      font-size: 0.75rem;
+    }
+
+    .chat-close-btn {
+      margin-left: auto;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+
+    .chat-close-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Messages */
+    #chatMessages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #fafafa;
+      min-height: 220px;
+      max-height: 280px;
+    }
+
+    #chatMessages::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    #chatMessages::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    #chatMessages::-webkit-scrollbar-thumb {
+      background: #e0e0e0;
+      border-radius: 4px;
+    }
+
+    .chat-msg {
+      max-width: 88%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.87rem;
+      line-height: 1.5;
+      animation: msgIn 0.3s ease;
+    }
+
+    @keyframes msgIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-msg.bot {
+      background: #fff;
+      color: #333;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      border-left: 3px solid #D32F2F;
+    }
+
+    .chat-msg.user {
+      background: linear-gradient(135deg, #D32F2F, #B71C1C);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+      align-self: flex-end;
+    }
+
+    .chat-typing {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 10px 14px;
+      background: #fff;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      border-left: 3px solid #D32F2F;
+      align-self: flex-start;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      width: fit-content;
+    }
+
+    .chat-typing span {
+      width: 7px;
+      height: 7px;
+      background: #D32F2F;
+      border-radius: 50%;
+      animation: typingDot 1.2s infinite;
+    }
+
+    .chat-typing span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .chat-typing span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typingDot {
+
+      0%,
+      60%,
+      100% {
+        transform: scale(1);
+        opacity: 0.4;
+      }
+
+      30% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+    }
+
+    /* Quick Reply Buttons */
+    #chatQuickReplies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px 16px 12px;
+      background: #fafafa;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .quick-reply-btn {
+      background: #fff;
+      border: 1.5px solid #D32F2F;
+      color: #D32F2F;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .quick-reply-btn:hover {
+      background: #D32F2F;
+      color: #fff;
+    }
+
+    /* Input */
+    .chat-input-row {
+      display: flex;
+      gap: 8px;
+      padding: 10px 14px;
+      border-top: 1px solid #f0f0f0;
+      background: #fff;
+      flex-shrink: 0;
+    }
+
+    #chatInput {
+      flex: 1;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border 0.2s;
+    }
+
+    #chatInput:focus {
+      border-color: #D32F2F;
+    }
+
+    #chatSendBtn {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #D32F2F, #B71C1C);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    #chatSendBtn:hover {
+      transform: scale(1.1);
+    }
+  </style>
+
+  <!-- Pulse ring behind button -->
+  <div class="chat-pulse-ring"></div>
+
+  <!-- Floating toggle button -->
+  <button id="chatbotToggle" title="Blood Donation Chatbot" onclick="toggleChatbot()">
+    <i class="fas fa-heartbeat" id="chatToggleIcon"></i>
+  </button>
+
+  <!-- Chat panel -->
+  <div id="chatbotPanel">
+    <div class="chat-header">
+      <div class="chat-avatar">🩸</div>
+      <div class="chat-header-info">
+        <h6>रक्तदान सहायक</h6>
+        <small>Blood Donation Assistant</small>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChatbot()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div id="chatMessages"></div>
+
+    <div id="chatQuickReplies"></div>
+
+    <div class="chat-input-row">
+      <input id="chatInput" type="text" placeholder="यहाँ टाइप करें..."
+        onkeydown="if(event.key==='Enter')sendChatMessage()">
+      <button id="chatSendBtn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <script>
+    // ===== Chatbot Logic =====
+    let chatOpen = false;
+    let chatStep = 'start';
+    let eligibilityData = {};
+
+    const BOT_DELAY = 700;
+
+    const STEPS = {
+      start: {
+        msg: '🙏 नमस्ते! मैं आपका रक्तदान सहायक हूँ। मैं आपको बताऊँगा कि आप रक्तदान कर सकते हैं या नहीं। क्या आप रक्तदान पात्रता जाँचना चाहते हैं?',
+        replies: ['हाँ, जाँचना चाहता हूँ', 'नहीं, बाद में']
+      },
+      age: {
+        msg: '📅 आपकी उम्र कितनी है?',
+        replies: ['18 से कम', '18–25 वर्ष', '26–45 वर्ष', '46–65 वर्ष', '65 से अधिक']
+      },
+      weight: {
+        msg: '⚖️ आपका वजन लगभग कितना है?',
+        replies: ['45 किलो से कम', '45–55 किलो', '55 किलो से अधिक']
+      },
+      lastDonation: {
+        msg: '🩸 आपने पिछली बार रक्तदान कब किया था?',
+        replies: ['पहले कभी नहीं किया', '3 महीने से कम पहले', '3 से 6 महीने पहले', '6 महीने से अधिक पहले']
+      },
+      illness: {
+        msg: '🤒 क्या आप पिछले 2 हफ्तों में बीमार (बुखार, सर्दी, खाँसी) थे या हैं?',
+        replies: ['हाँ', 'नहीं']
+      },
+      medicine: {
+        msg: '💊 क्या आप कोई दवाई ले रहे हैं (एंटीबायोटिक, ब्लड थिनर)?',
+        replies: ['हाँ', 'नहीं']
+      },
+      pregnant: {
+        msg: '🤰 क्या आप गर्भवती हैं, हाल ही में प्रसव हुआ है, या स्तनपान करा रही हैं? (पुरुष "नहीं" चुनें)',
+        replies: ['हाँ', 'नहीं']
+      }
+    };
+
+    function toggleChatbot() {
+      chatOpen = !chatOpen;
+      const panel = document.getElementById('chatbotPanel');
+      const icon = document.getElementById('chatToggleIcon');
+      panel.classList.toggle('open', chatOpen);
+      icon.className = chatOpen ? 'fas fa-times' : 'fas fa-heartbeat';
+      if (chatOpen && document.getElementById('chatMessages').children.length === 0) {
+        startChat();
+      }
+    }
+
+    function startChat() {
+      chatStep = 'start';
+      eligibilityData = {};
+      showBotTyping(() => {
+        showBotMsg(STEPS.start.msg);
+        showReplies(STEPS.start.replies, handleStartReply);
+      });
+    }
+
+    function handleStartReply(text) {
+      addUserMsg(text);
+      clearReplies();
+      if (text.includes('هاँ') || text.includes('हाँ') || text.includes('जाँचना')) {
+        goToStep('age');
+      } else {
+        showBotTyping(() => {
+          showBotMsg('ठीक है! जब भी चाहें, मुझसे पूछें। रक्तदान एक महान कार्य है! 🙏❤️');
+        });
+      }
+    }
+
+    function goToStep(step) {
+      chatStep = step;
+      const s = STEPS[step];
+      if (!s) return;
+      showBotTyping(() => {
+        showBotMsg(s.msg);
+        showReplies(s.replies, (text) => handleStepReply(step, text));
+      });
+    }
+
+    function handleStepReply(step, text) {
+      addUserMsg(text);
+      clearReplies();
+      eligibilityData[step] = text;
+
+      if (step === 'age') {
+        if (text.includes('कम') || text.includes('18 से कम') || text.includes('65 से अधिक')) {
+          showResult(false, 'आपकी उम्र रक्तदान के लिए उपयुक्त नहीं है। रक्तदान की उम्र सीमा 18 से 65 वर्ष होती है।');
+        } else { goToStep('weight'); }
+      } else if (step === 'weight') {
+        if (text.includes('45 किलो से कम')) {
+          showResult(false, 'आपका वजन कम है। रक्तदान के लिए न्यूनतम 45 किलो वजन होना चाहिए।');
+        } else { goToStep('lastDonation'); }
+      } else if (step === 'lastDonation') {
+        if (text.includes('3 महीने से कम')) {
+          showResult(false, 'आपने बहुत हाल ही में रक्तदान किया था। पुरुषों को 3 महीने और महिलाओं को 4 महीने का अंतर रखना चाहिए।');
+        } else { goToStep('illness'); }
+      } else if (step === 'illness') {
+        if (text === 'हाँ') {
+          showResult(false, 'बीमारी के दौरान रक्तदान नहीं करना चाहिए। पूरी तरह स्वस्थ होने के 2 हफ्ते बाद दान करें।');
+        } else { goToStep('medicine'); }
+      } else if (step === 'medicine') {
+        if (text === 'हाँ') {
+          showResult(false, 'कुछ दवाइयाँ रक्तदान के लिए बाधा हो सकती हैं। कृपया डॉक्टर से परामर्श लें।');
+        } else { goToStep('pregnant'); }
+      } else if (step === 'pregnant') {
+        if (text === 'हाँ') {
+          showResult(false, 'गर्भावस्था या स्तनपान के दौरान रक्तदान वर्जित है।');
+        } else {
+          showResult(true, '');
+        }
+      }
+    }
+
+    function showResult(eligible, reason) {
+      setTimeout(() => {
+        if (eligible) {
+          showBotTyping(() => {
+            showBotMsg('🎉 बधाई हो! आप रक्तदान करने के लिए पात्र हैं! आपका एक रक्तदान 3 जिंदगियाँ बचा सकता है। अभी रजिस्ट्रेशन करें! ❤️');
+            showReplies(['रजिस्टर करें', 'फिर से जाँचें'], (t) => {
+              addUserMsg(t);
+              clearReplies();
+              if (t === 'रजिस्टर करें') window.location.href = './register.html';
+              else startChat();
+            });
+          });
+        } else {
+          showBotTyping(() => {
+            showBotMsg(`😟 क्षमा करें, अभी आप रक्तदान के लिए पात्र नहीं हैं।\n\n📋 कारण: ${reason}\n\nभविष्य में ज़रूर दान करें! 🙏`);
+            showReplies(['फिर से जाँचें', 'बंद करें'], (t) => {
+              addUserMsg(t);
+              clearReplies();
+              if (t === 'फिर से जाँचें') startChat();
+              else toggleChatbot();
+            });
+          });
+        }
+      }, BOT_DELAY);
+    }
+
+    function showBotTyping(callback) {
+      const msgs = document.getElementById('chatMessages');
+      const typing = document.createElement('div');
+      typing.className = 'chat-typing';
+      typing.id = 'chatTyping';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      msgs.appendChild(typing);
+      scrollChat();
+      setTimeout(() => {
+        typing.remove();
+        callback();
+      }, BOT_DELAY);
+    }
+
+    function showBotMsg(text) {
+      const msgs = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'chat-msg bot';
+      div.style.whiteSpace = 'pre-line';
+      div.textContent = text;
+      msgs.appendChild(div);
+      scrollChat();
+    }
+
+    function addUserMsg(text) {
+      const msgs = document.getElementById('chatMessages');
+      const div = document.createElement('div');
+      div.className = 'chat-msg user';
+      div.textContent = text;
+      msgs.appendChild(div);
+      scrollChat();
+    }
+
+    function showReplies(options, handler) {
+      const el = document.getElementById('chatQuickReplies');
+      el.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'quick-reply-btn';
+        btn.textContent = opt;
+        btn.onclick = () => handler(opt);
+        el.appendChild(btn);
+      });
+    }
+
+    function clearReplies() {
+      document.getElementById('chatQuickReplies').innerHTML = '';
+    }
+
+    function scrollChat() {
+      const msgs = document.getElementById('chatMessages');
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+      addUserMsg(text);
+      showBotTyping(() => {
+        showBotMsg('मैं आपसे ऊपर के बटन के माध्यम से बेहतर सहायता कर सकता हूँ। कृपया विकल्प चुनें या "शुरू करें" टाइप करें।');
+        if (text.toLowerCase().includes('start') || text.includes('शुरू') || text.includes('हाँ')) {
+          startChat();
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
+

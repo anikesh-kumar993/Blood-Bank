@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Patient Dashboard - Submit blood requests and find matching donors">
+  <title>Patient Dashboard | Digital Blood Network</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1><i class="fas fa-user-injured me-2"></i> Patient Dashboard</h1>
+    <p>Submit blood requests and track their status</p>
+  </div>
+
+  <div class="container" style="margin-top:-30px;position:relative;z-index:10;padding-bottom:60px">
+    <div class="row g-4">
+      <!-- Submit Blood Request -->
+      <div class="col-lg-5">
+        <div class="dashboard-card">
+          <h5 class="mb-3"><i class="fas fa-plus-circle text-danger me-2"></i> New Blood Request</h5>
+          <form id="bloodRequestForm">
+            <div class="mb-3">
+              <label class="form-label">Blood Group Required *</label>
+              <select class="form-select" id="reqBloodGroup" required>
+                <option value="">Select blood group</option>
+                <option value="A+">A+</option><option value="A-">A-</option>
+                <option value="B+">B+</option><option value="B-">B-</option>
+                <option value="AB+">AB+</option><option value="AB-">AB-</option>
+                <option value="O+">O+</option><option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Units Needed *</label>
+              <input type="number" class="form-control" id="reqUnits" min="1" max="10" value="1" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Hospital Name *</label>
+              <input type="text" class="form-control" id="reqHospital" placeholder="Enter hospital name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Urgency Level *</label>
+              <div class="d-flex gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="urgency" id="urgNormal" value="normal" checked>
+                  <label class="form-check-label" for="urgNormal">Normal</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="urgency" id="urgEmergency" value="emergency">
+                  <label class="form-check-label text-danger fw-bold" for="urgEmergency">
+                    <i class="fas fa-exclamation-triangle me-1"></i> Emergency
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Additional Notes</label>
+              <textarea class="form-control" id="reqNotes" rows="2" placeholder="Any additional information"></textarea>
+            </div>
+            <button type="submit" class="btn btn-red w-100" id="submitRequestBtn">
+              <i class="fas fa-paper-plane me-2"></i> Submit Request
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- My Requests -->
+      <div class="col-lg-7">
+        <div class="dashboard-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0"><i class="fas fa-list-alt text-danger me-2"></i> My Requests</h5>
+            <button class="btn btn-sm btn-outline-danger rounded-pill" onclick="loadMyRequests()">
+              <i class="fas fa-sync-alt me-1"></i> Refresh
+            </button>
+          </div>
+          <div id="myRequestsList">
+            <div class="loading-spinner"><div class="spinner-blood"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./main.js"></script>
+  <script src="./patient.js"></script>
+</body>
+</html>
+
+

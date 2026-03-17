@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blood Compatibility Checker and Donation Eligibility Calculator">
+  <title>Blood Compatibility | Digital Blood Network</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="page-header">
+    <h1><i class="fas fa-vials me-2"></i> Blood Compatibility</h1>
+    <p>Check blood type compatibility and donation eligibility</p>
+  </div>
+
+  <div class="container" style="margin-top:-30px;position:relative;z-index:10;padding-bottom:60px">
+    <div class="row g-4">
+      <!-- Compatibility Checker -->
+      <div class="col-lg-7">
+        <div class="dashboard-card">
+          <h5 class="mb-3"><i class="fas fa-exchange-alt text-danger me-2"></i> Blood Compatibility Chart</h5>
+          <p class="text-muted mb-3">Find out which blood types are compatible for donation and receiving</p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered compatibility-table mb-0">
+              <thead>
+                <tr style="background:var(--primary);color:white">
+                  <th>Recipient →<br>Donor ↓</th>
+                  <th>A+</th>
+                  <th>A-</th>
+                  <th>B+</th>
+                  <th>B-</th>
+                  <th>AB+</th>
+                  <th>AB-</th>
+                  <th>O+</th>
+                  <th>O-</th>
+                </tr>
+              </thead>
+              <tbody id="compatibilityTable"></tbody>
+            </table>
+          </div>
+          <div class="mt-3 d-flex gap-3 flex-wrap">
+            <span><span class="compatible px-2 py-1 rounded">✓</span> Compatible</span>
+            <span><span class="incompatible px-2 py-1 rounded">✗</span> Incompatible</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Checker -->
+      <div class="col-lg-5">
+        <div class="dashboard-card mb-4">
+          <h5 class="mb-3"><i class="fas fa-search text-danger me-2"></i> Quick Compatibility Check</h5>
+          <div class="mb-3">
+            <label class="form-label">Donor Blood Type</label>
+            <select class="form-select" id="donorType" onchange="checkCompatibility()">
+              <option value="">Select</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Recipient Blood Type</label>
+            <select class="form-select" id="recipientType" onchange="checkCompatibility()">
+              <option value="">Select</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+          <div id="compatResult"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eligibility Calculator -->
+    <div class="row justify-content-center mt-2">
+      <div class="col-lg-8">
+        <div class="dashboard-card">
+          <h5 class="mb-3"><i class="fas fa-calculator text-danger me-2"></i> Donation Eligibility</h5>
+          <p class="text-muted mb-3">Check if you're eligible to donate blood</p>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Your Age</label>
+              <input type="number" class="form-control" id="eligAge" min="1" max="100" placeholder="Enter your age">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Weight (kg)</label>
+              <input type="number" class="form-control" id="eligWeight" min="1" max="300"
+                placeholder="Enter weight in kg">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Last Donation Date</label>
+              <input type="date" class="form-control" id="eligLastDonation">
+            </div>
+            <div class="col-12 form-check ms-2 mt-3 mb-2">
+              <input type="checkbox" class="form-check-input" id="eligHealthy">
+              <label class="form-check-label" for="eligHealthy">I am in good general health (no recent infections, surgeries, or tattoos within 6 months)</label>
+            </div>
+          </div>
+          <button class="btn btn-red w-100 mt-2" onclick="checkEligibility()" style="padding:10px; font-weight:bold;">
+            <i class="fas fa-check-circle me-1"></i> Check Eligibility
+          </button>
+          <div id="eligibilityResult" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./main.js"></script>
+  <script src="./compatibility.js"></script>
+</body>
+
+</html>
+
